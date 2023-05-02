@@ -1,12 +1,20 @@
+<a href="?page=albums">Voltar para os Álbums</a>
 <h1> Músicas do Álbum <?=$_GET['album']?></h1>
+
+<a href="?page=new_music&album=<?=$_GET['album']?>" class="btn btn-sucess">Cadastrar Nova Música</a>
+
 <hr>
+<?php
+$album = $_GET['album'];
+$musics = getMusics($album);
+
+foreach ($musics as $music):
+?>
 <div class="col-12">
-    <audio src="albums/empires/musics/guitar.mp3" controls></audio>
+    <audio src="<?=$music?>" controls></audio>
 </div>
-<div>
-    <audio src="albums/grace/musics/guitar2.mp3" controls></audio>
-</div>
-<div>
-    <audio src="albums/wonder/musics/guitar3.mp3" controls></audio>
-</div>
+
+<?php 
+endforeach;
+?>
 
