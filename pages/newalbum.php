@@ -1,4 +1,4 @@
-<a href="?page=albums">Voltar para os Álbums </a>
+<a href="?page=albuns">Voltar para os Álbums </a>
 <h1> Cadastrar novo Álbum </h1>
 
 <form action="#" method="post" enctype="multipart/form-data">
@@ -16,7 +16,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $album = $_POST['name'];
 
-    $path = "albums/{$album}";
+    $path = "albuns/{$album}";
 
     if (!is_dir($path)) {
         mkdir($path);
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nameImage = $album . '.' . $extension;
 
     if (move_uploaded_file($file['tmp_name'], $path.'/'.$nameImage)){
-        header('Location: ?page=albums');
+        header('Location: ?page=albuns');
     } else {
         echo 'falha no upload';
     }

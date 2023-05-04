@@ -1,4 +1,4 @@
-<a href="?page=albums">Voltar para o Álbum <?=$_GET['album']?></a>
+<a href="?page=albuns">Voltar para o Álbum <?=$_GET['album']?></a>
 <h1> Cadastrar nova música para o Álbum <?=$_GET['album']?> </h1>
 
 <form action="#" method="post" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $album = $_GET['album'];
 
-    $path = "albums/{$album}/musics/";
+    $path = "albuns/{$album}/musics/";
 
     if(!is_dir($path)) {
         mkdir($path);
